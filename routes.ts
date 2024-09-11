@@ -1,6 +1,8 @@
-import { Router, Request, Response } from "express";
-import { CreateUserController } from "./src/controller/CreateUserController";
-import { AuthUserController } from "./src/controller/AuthUserController";
+import { Router } from "express";
+import { CreateUserController } from "./src/controller/user/CreateUserController";
+import { AuthUserController } from "./src/controller/user/AuthUserController";
+import { CreateReceiveController } from "./src/controller/receive/CreateReceiveController";
+import { isAuthenticated } from "./src/middlewares/isAuthenticated";
 
 
 const router = Router()
@@ -9,5 +11,9 @@ const router = Router()
 
 router.post('/users', new CreateUserController().handle)
 router.post('/session', new AuthUserController().handle)
+
+// ROTAS RECEITAS
+
+router.post('/receive', isAuthenticated, new CreateReceiveController().handle)
 
 export { router }
