@@ -29,16 +29,7 @@ class CreateReceiveService {
                     balance: findUser.balance + Number(value)
                 }
             })
-        } else {
-            await prismaClient.user.update({
-                where: {
-                    id: user_id
-                },
-                data: {
-                    balance: findUser.balance + Number(value)
-                }
-            })
-        }
+        } 
 
         const newReceive = await prismaClient.receive.create({
             data: {

@@ -4,6 +4,7 @@ import { AuthUserController } from "./src/controller/user/AuthUserController";
 import { CreateReceiveController } from "./src/controller/receive/CreateReceiveController";
 import { ListReceivesController } from "./src/controller/receive/ListReceivesController";
 import { ListReceiveDebitController } from "./src/controller/receive/ListReceiveControllerDebit";
+import { DeletReceiveController } from "./src/controller/receive/DeletReceiveController";
 import { isAuthenticated } from "./src/middlewares/isAuthenticated";
 
 
@@ -19,5 +20,6 @@ router.post('/session', new AuthUserController().handle)
 router.post('/receive', isAuthenticated, new CreateReceiveController().handle)
 router.get('/receives', isAuthenticated, new ListReceivesController().handle)
 router.get('/debit', isAuthenticated, new ListReceiveDebitController().handle)
+router.delete('/delete', isAuthenticated, new DeletReceiveController().handle)
 
 export { router }
