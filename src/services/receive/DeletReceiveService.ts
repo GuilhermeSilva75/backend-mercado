@@ -27,16 +27,27 @@ class DeletReceiveService {
           }
         })
 
-        const valueUpdated = receive.type === 'debito' ? findUser.balance += receive.value : findUser.balance -= receive.value
+        // const valueUpdated = receive.type === 'debito' ? findUser.balance += receive.value : findUser.balance -= receive.value
 
-        const updateUser = await prismaClient.user.update({
+        if (receive.type === 'receita') {
+          await prismaClient.user.update({
             where: {
-                id: user_id
+              id: user_id
             },
             data: {
-                balance: valueUpdated
+              balance: findUser.balance -= receive.value
             }
-        })
+          })
+        }
+
+        // const updateUser = await prismaClient.user.update({
+        //     where: {
+        //         id: user_id
+        //     },
+        //     data: {
+        //         balance: valueUpdated
+        //     }
+        // })
     
         return { status: 'updated'}
     
