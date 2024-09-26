@@ -7,6 +7,7 @@ import { ListReceiveDebitController } from "./src/controller/receive/ListReceive
 import { DeletReceiveController } from "./src/controller/receive/DeletReceiveController";
 import { ListUserBalanceController } from "./src/controller/user/ListUserBalanceController";
 import { isAuthenticated } from "./src/middlewares/isAuthenticated";
+import { ListDetailUserController } from "./src/controller/user/class ListDetailUserController{";
 
 
 const router = Router()
@@ -16,6 +17,7 @@ const router = Router()
 router.post('/users', new CreateUserController().handle)
 router.post('/session', new AuthUserController().handle)
 router.get('/dashboard', isAuthenticated, new ListUserBalanceController().handle)
+router.get("/me", isAuthenticated, new ListDetailUserController().handle);
 
 // ROTAS RECEITAS
 
