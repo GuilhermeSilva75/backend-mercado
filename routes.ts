@@ -7,7 +7,7 @@ import { ListReceiveDebitController } from "./src/controller/receive/ListReceive
 import { DeletReceiveController } from "./src/controller/receive/DeletReceiveController";
 import { ListUserBalanceController } from "./src/controller/user/ListUserBalanceController";
 import { isAuthenticated } from "./src/middlewares/isAuthenticated";
-import { ListDetailUserController } from "./src/controller/user/class ListDetailUserController{";
+import { ListDetailUserController } from "./src/controller/user/ListDetailUserController";
 
 
 const router = Router()
