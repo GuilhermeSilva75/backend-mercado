@@ -67,7 +67,7 @@ class ListUserBalanceService {
             saldo: resultExpenses
         }
 
-        dashboard.push(data, sumDailyRevenue, sumDailyExpense);
+        dashboard.push(sumDailyRevenue, data, sumDailyExpense);
 
         return dashboard;
     }
