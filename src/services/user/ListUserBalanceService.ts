@@ -36,7 +36,7 @@ class ListUserBalanceService {
             where: {
                 date: date,
                 user_id: user_id,
-                type: 'receita'
+                type: 'venda'
             }
         })
 

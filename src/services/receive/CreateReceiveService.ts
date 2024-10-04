@@ -20,7 +20,7 @@ class CreateReceiveService {
             }
         })
 
-        if (type === 'receita') {
+        if (type === 'venda') {
             await prismaClient.user.update({
                 where: {
                     id: user_id
