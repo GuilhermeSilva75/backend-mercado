@@ -29,7 +29,7 @@ class DeletReceiveService {
 
         // const valueUpdated = receive.type === 'debito' ? findUser.balance += receive.value : findUser.balance -= receive.value
 
-        if (receive.type === 'receita') {
+        if (receive.type === 'Venda') {
           await prismaClient.user.update({
             where: {
               id: user_id
